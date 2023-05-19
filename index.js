@@ -36,10 +36,10 @@ app.use("/api/lists", listRoute);
 //   app.use(express.static("client/build"));
 // }
 
-app.use(express.static(path.join(__dirname + "/public")));
+app.use(express.static(path.join(__dirname + "/client")));
 
 app.get("*", function (req, res){
-  res.sendFile(path.join(__dirname, "./public/index.html"));
+  res.sendFile(path.join(__dirname, "/client/build"));
 })
 
 app.listen(PORT, () => {
